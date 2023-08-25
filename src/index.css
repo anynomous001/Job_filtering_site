@@ -45,7 +45,17 @@ main {
     top: -50px;
     height: 10em;
     width: 70%;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 80% auto;
+    place-items: center;
+    padding: 1em 0 1em 1em;
+}
 
+.filters-div {
+    background-color: antiquewhite;
+    height: 90%;
+    width: 100%;
 }
 
 .inner-main {

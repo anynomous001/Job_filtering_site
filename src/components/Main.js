@@ -4,13 +4,39 @@ import defaultpic from '../images/myhome.png'
 
 const Main = () => {
 
-    const defaultImage = defaultpic;
+    /*const defaultImage = defaultpic;
+
+    const [filterValue, setFilterValue] = React.useState('')
 
     const [data, setData] = React.useState(jsonData)
 
+    function handleClear() {
+        setData(jsonData)
+        setFilterValue('')
+    }*/
+    const defaultImage = defaultpic;
+
+    const [filterValue, setFilterValue] = React.useState('');
+
+    const [originalData, setOriginalData] = React.useState(jsonData);
+
+    const [data, setData] = React.useState(jsonData);
+
+    function handleClear() {
+        setData(originalData);
+        setFilterValue("");
+    }
+
+
+
+
+
+
     function handleFilter(e) {
-        const filterValue = e.target.textContent;
-        const filteredData = jsonData.filter(item => {
+        setFilterValue(e.target.textContent);
+        console.log(filterValue)
+
+        const filteredData = data.filter(item => {
             const { level, role, languages, tools } = item;
             return (
                 level === filterValue ||
@@ -20,16 +46,22 @@ const Main = () => {
             );
         });
 
+
         setData(filteredData);
+        console.log(filterValue)
     }
+
+
     const jobHtml = data.map((data) => {
         const { logo, position, company, postedAt, location, contract, level, role, tools, languages, featured, newbie, id } = data
 
-
-
-        const importImage = src => {
+        function removeSubstring(inputString, substringToRemove) {
+            return inputString.replace(substringToRemove, '');
+        }
+        const LogoPath = removeSubstring(logo, '../images/');
+        const importImage = (src) => {
             try {
-                return require(src);
+                return require(`../images/${src}`);
             } catch (err) {
                 return defaultImage;
             }
@@ -40,7 +72,7 @@ const Main = () => {
 
             <div className='job-card' key={id}>
                 <img className='logo'
-                    src={importImage(logo)}
+                    src={importImage(LogoPath)}
                     alt={`${company} logo`}
                 />
                 <div className='job-details'>
@@ -75,7 +107,11 @@ const Main = () => {
     return (
         <div>
             <main>
-                <textarea className='filter-input' ></textarea>
+                <div className='filter-input' >
+                    <div className='filters-div'>
+                        {filterValue && <button>{filterValue}</button>}
+                    </div>
+                    <button onClick={handleClear}>Clear</button></div>
                 <div className="inner-main">
                     {jobHtml}
                 </div>

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "company": "Photosnap",
-    "logo": "../images/photosnap.png",
+    "logo": "photosnap.png",
     "newbie": true,
     "featured": true,
     "position": "Senior Frontend Developer",
@@ -21,7 +21,7 @@
   {
     "id": 2,
     "company": "Manage",
-    "logo": "../images/manage.png",
+    "logo": "manage.png",
     "newbie": true,
     "featured": true,
     "position": "Fullstack Developer",
