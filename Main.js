@@ -9,24 +9,15 @@ const Main = () => {
     const [data, setData] = React.useState(jsonData)
 
     function handleFilter(e) {
-        const filterValue = e.target.textContent;
-        const filteredData = jsonData.filter(item => {
-            const { level, role, languages, tools } = item;
-            return (
-                level === filterValue ||
-                role === filterValue ||
-                languages.includes(filterValue) ||
-                tools.includes(filterValue)
-            );
-        });
-
-        setData(filteredData);
+        console.log(e.target.textContent)
+        let filterValue = e.target.textContent
+        const { level, role, languages, tools } = data
+        if (level || role || languages || tools === filterValue) {
+            setData(data)
+        }
     }
     const jobHtml = data.map((data) => {
         const { logo, position, company, postedAt, location, contract, level, role, tools, languages, featured, newbie, id } = data
-
-
-
         const importImage = src => {
             try {
                 return require(src);
@@ -37,7 +28,6 @@ const Main = () => {
 
 
         return (
-
             <div className='job-card' key={id}>
                 <img className='logo'
                     src={importImage(logo)}
@@ -69,20 +59,17 @@ const Main = () => {
                     })}
                 </div>
             </div >
-
         )
     })
     return (
         <div>
             <main>
-                <textarea className='filter-input' ></textarea>
                 <div className="inner-main">
                     {jobHtml}
                 </div>
             </main>
         </div>
     )
-
 }
 
 export default Main

@@ -34,13 +34,24 @@ main {
     width: 100%;
     background-color: hsl(180, 51%, 83%);
     padding: 2em 0;
+    position: relative;
+}
+
+.filter-input {
+    position: absolute;
+    border: none;
+    border-radius: 15px;
+    right: 15%;
+    top: -50px;
+    height: 10em;
+    width: 70%;
 
 }
 
 .inner-main {
     width: 70%;
     height: 100%;
-    margin: 0 auto;
+    margin: 7em auto;
 }
 
 .job-card {
