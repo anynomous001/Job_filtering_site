@@ -4,55 +4,32 @@ import defaultpic from '../images/myhome.png'
 
 const Main = () => {
 
-    /*const defaultImage = defaultpic;
-
-    const [filterValue, setFilterValue] = React.useState('')
-
-    const [data, setData] = React.useState(jsonData)
-
-    function handleClear() {
-        setData(jsonData)
-        setFilterValue('')
-    }*/
     const defaultImage = defaultpic;
 
     const [filterValue, setFilterValue] = React.useState('');
-
-    const [originalData, setOriginalData] = React.useState(jsonData);
-
     const [data, setData] = React.useState(jsonData);
 
     function handleClear() {
-        setData(originalData);
+        setData(jsonData);
         setFilterValue("");
     }
 
-
-
-
-
+    const displayedJobs = filterValue ? data.filter(item => {
+        const { level, role, languages, tools } = item;
+        return (
+            level === filterValue ||
+            role === filterValue ||
+            languages.includes(filterValue) ||
+            tools.includes(filterValue)
+        )
+    }) : data
 
     function handleFilter(e) {
         setFilterValue(e.target.textContent);
-        console.log(filterValue)
-
-        const filteredData = data.filter(item => {
-            const { level, role, languages, tools } = item;
-            return (
-                level === filterValue ||
-                role === filterValue ||
-                languages.includes(filterValue) ||
-                tools.includes(filterValue)
-            );
-        });
-
-
-        setData(filteredData);
-        console.log(filterValue)
     }
 
 
-    const jobHtml = data.map((data) => {
+    const jobHtml = displayedJobs.map((data) => {
         const { logo, position, company, postedAt, location, contract, level, role, tools, languages, featured, newbie, id } = data
 
         function removeSubstring(inputString, substringToRemove) {
@@ -122,20 +99,3 @@ const Main = () => {
 }
 
 export default Main
-
-
-/*{
-company: "Photosnap"
-contract: "Full Time"
-featured: true
-id: 1
-languages: (3) ['HTML', 'CSS', 'JavaScript']
-level: "Senior"
-location: "USA Only"
-logo: "../images/photosnap.png"
-new: true
-position: "Senior Frontend Developer"
-postedAt: "1d ago"
-role: "Frontend"
-tools: []
-*/
