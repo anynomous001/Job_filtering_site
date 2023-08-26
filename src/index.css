@@ -53,7 +53,7 @@ main {
 }
 
 .filters-div {
-    background-color: antiquewhite;
+
     height: 90%;
     width: 100%;
 }
@@ -172,7 +172,16 @@ main {
     flex-wrap: wrap;
 }
 
-.filter-div button {
+.filters-div {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.filter-div button,
+.filters {
     cursor: pointer;
     border-radius: 5px;
     padding: 0.4em;
@@ -183,3 +192,5 @@ main {
     font-weight: 800;
     font-family: 'League Spartan', sans-serif;
 }
+
+.filters {}

@@ -6,26 +6,32 @@ const Main = () => {
 
     const defaultImage = defaultpic;
 
-    const [filterValue, setFilterValue] = React.useState('');
+    const [filterValue, setFilterValue] = React.useState([]);
     const [data, setData] = React.useState(jsonData);
 
     function handleClear() {
         setData(jsonData);
-        setFilterValue("");
+        setFilterValue([]);
     }
 
-    const displayedJobs = filterValue ? data.filter(item => {
+    const displayedJobs = filterValue.length > 0 ? data.filter(item => {
         const { level, role, languages, tools } = item;
         return (
-            level === filterValue ||
-            role === filterValue ||
-            languages.includes(filterValue) ||
-            tools.includes(filterValue)
+            filterValue.includes(level) ||
+            filterValue.includes(role) ||
+            languages.some(lang => filterValue.includes(lang)) ||
+            tools.some(tool => filterValue.includes(tool))
         )
     }) : data
 
     function handleFilter(e) {
-        setFilterValue(e.target.textContent);
+        const selectedFilterValue = e.target.textContent;
+
+        if (filterValue.includes(selectedFilterValue)) {
+            setFilterValue(prevValues => prevValues.filter(values => values !== selectedFilterValue))
+        } else {
+            setFilterValue(prevValues => [...prevValues, selectedFilterValue]);
+        }
     }
 
 
@@ -86,7 +92,7 @@ const Main = () => {
             <main>
                 <div className='filter-input' >
                     <div className='filters-div'>
-                        {filterValue && <button>{filterValue}</button>}
+                        {filterValue.length > 0 && filterValue.map(filter => <button className='filters'>{filter}</button>)}
                     </div>
                     <button onClick={handleClear}>Clear</button></div>
                 <div className="inner-main">
