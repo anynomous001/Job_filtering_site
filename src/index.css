@@ -22,7 +22,7 @@ html {
 }
 
 header {
-    background: hsl(180, 51%, 43%) url('./images/bg-header-mobile.png');
+    background: #36a6a6 url('./images/bg-header-mobile.png');
 
     height: 25vh;
     width: 100%;
@@ -47,7 +47,7 @@ main {
     width: 70%;
     background-color: aliceblue;
     display: grid;
-    grid-template-columns: 80% auto;
+    grid-template-columns: 70% auto;
     place-items: center;
     padding: 1em 0 1em 1em;
 }
@@ -118,7 +118,7 @@ main {
 }
 
 .new {
-    background-color: hsl(180, 51%, 43%);
+    background-color: #36a6a6;
     color: white;
 }
 
@@ -193,4 +193,94 @@ main {
     font-family: 'League Spartan', sans-serif;
 }
 
-.filters {}
+.filters {
+    display: flex;
+    flex-grow: initial;
+    align-items: center;
+}
+
+.filter-div button:hover {
+    background-color: rgba(0, 255, 255, 0.11);
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+
+}
+
+
+.clear-filter {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0.4em;
+    border: none;
+    color: hsla(180, 4%, 31%, 0.555);
+    background-color: aliceblue;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: 'League Spartan', sans-serif;
+    display: flex;
+    align-items: center;
+    place-items: center;
+    gap: 0.2em;
+}
+
+/*.clear-filter {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #e2ecec;
+    color: #5acccc;
+    font-size: 16px;
+    cursor: pointer;
+}*/
+
+.clear-filter:hover {
+    background-color: rgba(0, 255, 255, 0.11);
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+}
+
+.cross-btn {
+    height: 100%;
+    width: 1em;
+}
+
+/*.clear-filter .cross-btn {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 30px;
+}*/
+
+/* Here is one way to center align the text and stretch the icon image across the button: ```
+css .clear-filter {
+     position: relative;
+     display: inline-flex;
+     align-items: center;
+     padding: 10px 15px;
+     border: none;
+     border-radius: 5px;
+     background: #36a6a6;
+     color: #fff;
+     font-size: 16px;
+     cursor: pointer;
+ }
+
+ .clear-filter .cross-btn {
+     position: absolute;
+     left: 0;
+     top: 50%;
+     transform: translateY(-50%);
+     height: 100%;
+     width: 30px;
+ }
+<button className="clear-filter"><img className="cross-btn" src="cross.png" />Clear </button>``` 
+Explanation: - Use position: relative on button and position: absolute on icon image. 
+- Align icon image to top 50% and translateY(-50%) to center it vertically. 
+- Set height: 100% on image to stretch it fully. 
+- Use inline-flex on button and align-items: center to center align text.
+Let me know if you have any other questions !*/

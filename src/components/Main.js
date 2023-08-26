@@ -2,6 +2,7 @@ import React from 'react'
 import jsonData from '../data.json';
 import defaultpic from '../images/myhome.png'
 
+
 const Main = () => {
 
     const defaultImage = defaultpic;
@@ -50,7 +51,6 @@ const Main = () => {
             }
         }
 
-
         return (
 
             <div className='job-card' key={id}>
@@ -87,14 +87,16 @@ const Main = () => {
 
         )
     })
+    const cross = <img className='cross-btn' onClick={handleFilter} width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/36a6a6/multiply-2.png" alt="multiply-2" />
+
     return (
         <div>
             <main>
                 <div className='filter-input' >
                     <div className='filters-div'>
-                        {filterValue.length > 0 && filterValue.map(filter => <button className='filters'>{filter}</button>)}
+                        {filterValue.length > 0 && filterValue.map(filter => <button className='filters'>{filter}{cross}</button>)}
                     </div>
-                    <button onClick={handleClear}>Clear</button></div>
+                    <button className='clear-filter' onClick={handleClear}>Clear{cross}</button></div>
                 <div className="inner-main">
                     {jobHtml}
                 </div>
