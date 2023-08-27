@@ -15,7 +15,7 @@ const Main = () => {
         setFilterValue([]);
     }
 
-    const displayedJobs = filterValue.length > 0 ? data.filter(item => {
+    /*const displayedJobs = filterValue.length > 0 ? data.filter(item => {
         const { level, role, languages, tools } = item;
         return (
             filterValue.includes(level) ||
@@ -23,7 +23,20 @@ const Main = () => {
             languages.some(lang => filterValue.includes(lang)) ||
             tools.some(tool => filterValue.includes(tool))
         )
-    }) : data
+    }) : data*/
+
+    const displayedJobs = filterValue.length > 0 ? filterValue.reduce((filteredData, currentFilter) => {
+        return filteredData.filter(item => {
+            const { level, role, languages, tools } = item;
+            return (
+                currentFilter === level ||
+                currentFilter === role ||
+                languages.includes(currentFilter) ||
+                tools.includes(currentFilter)
+            );
+        });
+    }, data) : data
+
 
     function handleFilter(e) {
         const selectedFilterValue = e.target.textContent;
