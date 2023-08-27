@@ -34,7 +34,14 @@ const Main = () => {
             setFilterValue(prevValues => [...prevValues, selectedFilterValue]);
         }
     }
+    function handleClick(e) {
+        console.log(e.target.parentElement.textContent)
+        const selectedFilterValueToDelete = e.target.parentElement.textContent
 
+        if (filterValue.includes(selectedFilterValueToDelete)) {
+            setFilterValue(prevValues => prevValues.filter(values => values !== selectedFilterValueToDelete))
+        }
+    }
 
     const jobHtml = displayedJobs.map((data) => {
         const { logo, position, company, postedAt, location, contract, level, role, tools, languages, featured, newbie, id } = data
@@ -87,7 +94,7 @@ const Main = () => {
 
         )
     })
-    const cross = <img className='cross-btn' onClick={handleFilter} width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/36a6a6/multiply-2.png" alt="multiply-2" />
+    const cross = <img className='cross-btn' onClick={handleClick} width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/36a6a6/multiply-2.png" alt="multiply-2" />
 
     return (
         <div>
