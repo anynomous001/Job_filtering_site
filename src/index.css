@@ -195,8 +195,9 @@ main {
 
 .filters {
     display: flex;
-    flex-grow: initial;
-    align-items: center;
+    place-items: center;
+    column-gap: 0.5em;
+    padding: 0.2em;
 }
 
 .filter-div button:hover {
@@ -218,7 +219,6 @@ main {
     font-weight: 800;
     font-family: 'League Spartan', sans-serif;
     display: flex;
-    align-items: center;
     place-items: center;
     gap: 0.2em;
 }
@@ -244,7 +244,13 @@ main {
 
 .cross-btn {
     height: 100%;
-    width: 1em;
+    width: 1.5em;
+}
+
+.cross-btn:hover {
+    background-color: rgba(0, 255, 255, 0.11);
+    transform: scale(1.1);
+    transition-duration: 0.2s;
 }
 
 /*.clear-filter .cross-btn {
@@ -284,3 +290,6 @@ Explanation: - Use position: relative on button and position: absolute on icon i
 - Set height: 100% on image to stretch it fully. 
 - Use inline-flex on button and align-items: center to center align text.
 Let me know if you have any other questions !*/
+.display {
+    display: none;
+}

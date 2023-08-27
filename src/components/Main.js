@@ -112,7 +112,7 @@ const Main = () => {
     return (
         <div>
             <main>
-                <div className='filter-input' >
+                <div className={`filter-input  ${filterValue.length === 0 && 'display'}`} >
                     <div className='filters-div'>
                         {filterValue.length > 0 && filterValue.map(filter => <button className='filters'>{filter}{cross}</button>)}
                     </div>
