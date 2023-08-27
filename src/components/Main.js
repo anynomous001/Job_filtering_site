@@ -92,7 +92,7 @@ const Main = () => {
                         <span>{location} </span>
                     </div>
                 </div>
-                <hr></hr>
+                <hr className='horizontal-line'></hr>
                 <div className='filter-div'>
                     <button onClick={handleFilter}>{level}</button>
                     <button onClick={handleFilter}>{role}</button>
@@ -107,6 +107,7 @@ const Main = () => {
 
         )
     })
+
     const cross = <img className='cross-btn' onClick={handleClick} width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/36a6a6/multiply-2.png" alt="multiply-2" />
 
     return (

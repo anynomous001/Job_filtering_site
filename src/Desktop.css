@@ -1,0 +1,53 @@
+@media only screen and (min-width:1040px) {
+    .inner-main {
+        width: 90%;
+        height: 100%;
+        margin: 7em auto;
+    }
+
+    .horizontal-line {
+        display: none;
+    }
+
+    .job-card {
+        width: 100%;
+        height: 140px;
+        background-color: aliceblue;
+        border-radius: 5px;
+        position: relative;
+        display: grid;
+        grid-template-columns: 20% 30% auto;
+        place-items: start;
+        /* Center both horizontally and vertically */
+        gap: 2em;
+        border: 1px solid black;
+    }
+
+    .job-card :first-child {
+        justify-self: start;
+    }
+
+    .logo {
+        width: 4em;
+        position: unset;
+        border: 1px solid black;
+    }
+
+    .job-details {
+        margin: 0;
+        border: 1px solid black;
+    }
+
+    .company-name {
+        margin-bottom: 0.4em;
+    }
+
+    .job-card .filter-div {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+}
