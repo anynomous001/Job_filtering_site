@@ -43,10 +43,10 @@ main {
     position: absolute;
     border: none;
     border-radius: 15px;
-    right: 15%;
+    right: 5%;
     top: -50px;
     height: 10em;
-    width: 70%;
+    width: 90%;
     background-color: aliceblue;
     display: grid;
     grid-template-columns: 80% 20%;
