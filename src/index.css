@@ -183,11 +183,10 @@ main {
     align-content: center;
 }
 
-.filter-div button,
-.filters {
+.filter-div button {
     cursor: pointer;
     border-radius: 5px;
-    padding: 0.4em;
+    padding: 0.3em;
     border: none;
     background-color: rgba(0, 255, 255, 0.11);
     color: hsl(180, 46%, 43%);
@@ -197,10 +196,18 @@ main {
 }
 
 .filters {
+    border: none;
+    background-color: rgba(0, 255, 255, 0.11);
+    color: hsl(180, 46%, 43%);
+    cursor: pointer;
+    border-radius: 5px;
     display: flex;
     place-items: center;
-    column-gap: 0.5em;
-    padding: 0.2em;
+    column-gap: 0.1em;
+    padding: 0.3em;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'League Spartan', sans-serif;
 }
 
 .filter-div button:hover {
