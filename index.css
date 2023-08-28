@@ -1,0 +1,323 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body,
+html {
+    padding: 0;
+    border: 0;
+    font-family: 'League Spartan', sans-serif;
+}
+
+#width-display {
+    position: fixed;
+    right: 0;
+    top: 50px;
+    font-size: 2rem;
+    font-weight: 800;
+
+}
+
+header {
+    background: #36a6a6 url('./images/bg-header-mobile.png');
+
+    height: 25vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+main {
+    width: 100%;
+    background-color: hsl(180, 51%, 83%);
+    padding: 2em 0;
+    position: relative;
+}
+
+.filter-input {
+    position: absolute;
+    border: none;
+    border-radius: 15px;
+    right: 15%;
+    top: -50px;
+    height: 10em;
+    width: 70%;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 70% auto;
+    place-items: center;
+    padding: 1em 0 1em 1em;
+    text-align: center;
+}
+
+.filters-div {
+
+    height: 90%;
+    width: 100%;
+}
+
+.inner-main {
+    width: 90%;
+    height: 100%;
+    margin: 7em auto;
+}
+
+.job-card {
+    width: 100%;
+    height: 300px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    position: relative;
+}
+
+.job-card:hover::before {
+    cursor: pointer;
+    content: '';
+    position: absolute;
+    height: inherit;
+    width: 0.3em;
+    border-radius: 5px 0 0 5px;
+    top: 0;
+    left: 0;
+    background-color: hsl(180, 51%, 43%);
+}
+
+.job-card span {
+
+    font-size: 1.1rem;
+    font-weight: 300;
+
+}
+
+.job-card {
+    margin: 2em 0;
+    margin-bottom: 5em;
+    padding: 2rem;
+    position: relative;
+}
+
+.job-card .featured,
+.job-card .new {
+    font-size: 1rem;
+    line-height: 1.8;
+
+    font-family: 'League Spartan', sans-serif;
+    margin: 0 0.3em;
+    font-weight: 800;
+    padding: 0.4em 0.6em;
+    border-radius: 18px;
+    text-align: center;
+    letter-spacing: 0.01cm;
+}
+
+.featured {
+    background-color: black;
+    color: aliceblue;
+}
+
+.new {
+    background-color: #36a6a6;
+    color: white;
+}
+
+.logo {
+    width: 4em;
+    position: absolute;
+    top: -30px;
+}
+
+.job-details {
+    margin: 1.2em 0;
+}
+
+.company-name {
+    display: inline-block;
+    margin-bottom: 1em;
+    color: hsl(180, 46%, 43%);
+    font-size: 1.5em;
+}
+
+.post-name {
+    margin-bottom: 1em;
+}
+
+
+.span-div span {
+    font-weight: 500;
+    color: hsl(180, 2%, 51%);
+}
+
+.span-div {
+    display: flex;
+    align-items: center;
+
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    background-color: hsla(180, 2%, 51%, 0.575);
+    border-radius: 50%;
+    margin: 0 10px;
+
+}
+
+.filter-div {
+    margin: 1em 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.filters-div {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.filter-div button,
+.filters {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0.4em;
+    border: none;
+    background-color: rgba(0, 255, 255, 0.11);
+    color: hsl(180, 46%, 43%);
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.filters {
+    display: flex;
+    place-items: center;
+    column-gap: 0.5em;
+    padding: 0.2em;
+}
+
+.filter-div button:hover {
+    background-color: rgba(0, 255, 255, 0.11);
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+
+}
+
+
+.clear-filter {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0.4em;
+    border: none;
+    color: hsla(180, 4%, 31%, 0.555);
+    background-color: aliceblue;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: 'League Spartan', sans-serif;
+    display: flex;
+    place-items: center;
+    gap: 0.2em;
+}
+
+.message-width {
+    display: none;
+    display: grid;
+    place-items: center;
+
+    position: absolute;
+    border: none;
+    border-radius: 15px;
+    right: 15%;
+    top: -50px;
+    height: 10em;
+    width: 70%;
+    background-color: aliceblue;
+
+
+}
+
+/*.clear-filter {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #e2ecec;
+    color: #5acccc;
+    font-size: 16px;
+    cursor: pointer;
+}*/
+
+.clear-filter:hover {
+    background-color: rgba(0, 255, 255, 0.11);
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+}
+
+.cross-btn {
+    height: 100%;
+    width: 1.5em;
+}
+
+.cross-btn:hover {
+    background-color: rgba(0, 255, 255, 0.11);
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+}
+
+/*.clear-filter .cross-btn {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 30px;
+}*/
+
+/* Here is one way to center align the text and stretch the icon image across the button: ```
+css .clear-filter {
+     position: relative;
+     display: inline-flex;
+     align-items: center;
+     padding: 10px 15px;
+     border: none;
+     border-radius: 5px;
+     background: #36a6a6;
+     color: #fff;
+     font-size: 16px;
+     cursor: pointer;
+ }
+
+ .clear-filter .cross-btn {
+     position: absolute;
+     left: 0;
+     top: 50%;
+     transform: translateY(-50%);
+     height: 100%;
+     width: 30px;
+ }
+<button className="clear-filter"><img className="cross-btn" src="cross.png" />Clear </button>``` 
+Explanation: - Use position: relative on button and position: absolute on icon image. 
+- Align icon image to top 50% and translateY(-50%) to center it vertically. 
+- Set height: 100% on image to stretch it fully. 
+- Use inline-flex on button and align-items: center to center align text.
+Let me know if you have any other questions !*/
+
+
+.filter-message {
+    color: hsla(180, 4%, 31%, 0.151);
+    line-height: 1.2;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: 'League Spartan', sans-serif;
+
+}
