@@ -43,15 +43,15 @@ main {
     position: absolute;
     border: none;
     border-radius: 15px;
-    right: 15%;
+    right: 5%;
     top: -50px;
     height: 10em;
-    width: 70%;
+    width: 90%;
     background-color: aliceblue;
     display: grid;
-    grid-template-columns: 70% auto;
+    grid-template-columns: 80% 20%;
     place-items: center;
-    padding: 1em 0 1em 1em;
+    padding: 1em 0.5em 1em 1em;
     text-align: center;
 }
 
@@ -221,16 +221,16 @@ main {
 .clear-filter {
     cursor: pointer;
     border-radius: 5px;
-    padding: 0.4em;
+    padding: 0.2em;
     border: none;
     color: hsla(180, 4%, 31%, 0.555);
     background-color: aliceblue;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 800;
     font-family: 'League Spartan', sans-serif;
     display: flex;
     place-items: center;
-    gap: 0.2em;
+    gap: 0.1em;
 }
 
 .message-width {
