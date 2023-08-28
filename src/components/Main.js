@@ -1,13 +1,12 @@
 import React from 'react'
-import jsonData from '../data.json';
 import defaultpic from '../images/myhome.png'
-
+import { DataContext } from '../App'
 
 const Main = () => {
 
+    const { jsonData, filterValue, setFilterValue } = React.useContext(DataContext)
     const defaultImage = defaultpic;
 
-    const [filterValue, setFilterValue] = React.useState([]);
     const [data, setData] = React.useState(jsonData);
 
     function handleClear() {
@@ -113,11 +112,32 @@ const Main = () => {
     return (
         <div>
             <main>
-                <div className={`filter-input  ${filterValue.length === 0 && 'display'}`} >
-                    <div className='filters-div'>
-                        {filterValue.length > 0 && filterValue.map(filter => <button className='filters'>{filter}{cross}</button>)}
-                    </div>
-                    <button className='clear-filter' onClick={handleClear}>Clear{cross}</button></div>
+                <div className={`${filterValue.length === 0 ? 'message-width' : 'filter-input  '}`}>
+                    {filterValue.length > 0 ? (
+                        <>
+                            <div className='filters-div'>
+                                {filterValue.map(filter => (
+                                    <button className='filters'>
+                                        {filter}
+                                        {cross}
+                                    </button>
+                                ))}
+                            </div>
+                            <div>
+                                {filterValue.length > 0 && (
+                                    <button className='clear-filter' onClick={handleClear}>
+                                        Clear
+                                        {cross}
+                                    </button>
+                                )}
+                            </div>
+                        </>
+                    ) : (
+                        <p className='filter-message'>
+                            You can filter your job preference by tapping preffred button
+                        </p>
+                    )}
+                </div>
                 <div className="inner-main">
                     {jobHtml}
                 </div>

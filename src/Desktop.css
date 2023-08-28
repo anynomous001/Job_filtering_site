@@ -5,6 +5,14 @@
         margin: 7em auto;
     }
 
+    .header {
+        background: #36a6a6 url('./images/bg-header-desktop.png');
+        height: 25vh;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     .horizontal-line {
         display: none;
     }
@@ -20,7 +28,6 @@
         place-items: start;
         /* Center both horizontally and vertically */
         gap: 2em;
-        border: 1px solid black;
     }
 
     .job-card :first-child {
@@ -30,12 +37,10 @@
     .logo {
         width: 4em;
         position: unset;
-        border: 1px solid black;
     }
 
     .job-details {
         margin: 0;
-        border: 1px solid black;
     }
 
     .company-name {
@@ -43,7 +48,6 @@
     }
 
     .job-card .filter-div {
-        border: 1px solid black;
         display: flex;
         flex-direction: row;
         gap: 1em;
