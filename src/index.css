@@ -139,11 +139,13 @@ main {
     display: inline-block;
     margin-bottom: 1em;
     color: hsl(180, 46%, 43%);
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .post-name {
     margin-bottom: 1em;
+        font-size: 1.4em;
+
 }
 
 
